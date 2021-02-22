@@ -8,12 +8,15 @@ terraform {
   }
 }
 
+variable "api_id" {}
+variable "api_key" {}
+variable "input_file" {}
+
 provider "incapsula" {
   api_id  = var.api_id
   api_key = var.api_key
 }
 
-variable "input_file" {}
 
 locals {
   application_information = csvdecode(file(var.input_file))
