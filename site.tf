@@ -28,5 +28,5 @@ resource "incapsula_site" "devops-sites" {
   data_storage_region    = local.application_information[count.index].data_storage_region
   send_site_setup_emails = local.application_information[count.index].send_site_setup_emails
   site_ip                = local.application_information[count.index].site_ip
-  remove_ssl            = true
+  remove_ssl            = false
 }
