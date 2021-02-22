@@ -1,15 +1,7 @@
-terraform {
-  required_providers {
-    incapsula = {
-      source = "imperva/incapsula"
-      version = "2.7.1"
-    }
-  }
-}
 
 provider "incapsula" {
-  api_id = "35609"
-  api_key = "67a7731e-0fb5-4f4d-a13d-83fad154c240"
+  api_id  = var.api_id
+  api_key = var.api_key
 }
 
 variable "input_file" {}
@@ -28,5 +20,5 @@ resource "incapsula_site" "devops-sites" {
   data_storage_region    = local.application_information[count.index].data_storage_region
   send_site_setup_emails = local.application_information[count.index].send_site_setup_emails
   site_ip                = local.application_information[count.index].site_ip
-  remove_ssl            = false
+  remove_ssl             = true
 }
