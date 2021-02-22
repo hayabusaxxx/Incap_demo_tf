@@ -1,4 +1,12 @@
 
+terraform {
+  required_providers {
+    incapsula = {
+      source = "imperva/incapsula"
+      version = "2.7.2"
+    }
+  }
+}
 
 provider "incapsula" {
   api_id  = var.api_id
